@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Pomodoro Timer</string>
+    <string name="Start">Start</string>
+    <string name="Mode">Focus/Pause</string>
+    <string name="End">END</string>
+
+    <string name="Focus">Time in Focus</string>
+    <string name="Break">Time in Break</string>
+    <string name="Percent">Focus Percent</string>
+
+</resources>

@@ -118,7 +118,7 @@ public class TimerFragment extends Fragment {
         });
 
         timerViewModel.getBackgroundColor().observe(getViewLifecycleOwner(), color -> {
-            binding.getRoot().setBackgroundColor(ContextCompat.getColor(Objects.requireNonNull(getContext()), color));
+            binding.getRoot().setBackgroundColor(ContextCompat.getColor(requireContext(), color));
         });
 
         return binding.getRoot();

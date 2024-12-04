@@ -1,6 +1,6 @@
 package com.mobileapp.timerapp;
 
-import android.os.CountDownTimer; //https://developer.android.com/reference/android/os/CountDownTimer#java need time up 
+import android.os.CountDownTimer; //https://developer.android.com/reference/android/os/CountDownTimer#java need time up
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -18,6 +18,16 @@ public class TimerViewModel extends ViewModel {
     private boolean isRunning = false;
     private boolean inBreakMode = false;
     private long timeLeft = 25 * mins;
+
+    public void addTime(int num) {
+        timeLeft += num * mins;
+        time.setValue(timeLeft);
+    }
+
+    public void subTime(int num) {
+        timeLeft -= num * mins;
+        time.setValue(timeLeft);
+    }
 
     public void updateTitle() {
         if (inBreakMode) {
@@ -42,7 +52,7 @@ public class TimerViewModel extends ViewModel {
         }
         focusCount.setValue(count + 1);
     }
-    
+
     public void updateBreak() {
         Integer count = breakCount.getValue();
         if (count == null) {
@@ -102,7 +112,7 @@ public class TimerViewModel extends ViewModel {
                     } else {
                         updateFocus();
                     }
-                    
+
                 }
                 @Override
                 public void onFinish() {
@@ -132,11 +142,11 @@ public class TimerViewModel extends ViewModel {
     public LiveData<Integer> getBackgroundColor() {
         return backgroundColor;
     }
-    
+
     public LiveData<String> getTitle() {
         return title;
     }
-    
+
     public LiveData<Integer> getSkipCount() {
         return skipCount;
     }

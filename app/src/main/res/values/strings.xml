@@ -8,4 +8,10 @@
     <string name="Break">Time in Break</string>
     <string name="Percent">Focus Percent</string>
 
+    <string-array name="options">
+        <item>1 min</item>
+        <item>5 mins</item>
+        <item>10 mins</item>
+    </string-array>
+
 </resources>
